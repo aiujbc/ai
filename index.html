@@ -131,19 +131,22 @@ nav {
 
 /* ─── AI TOOL CARDS (3 cols) ─── */
 .tool-grid {
-  display: grid; grid-template-columns: repeat(4,1fr);
+  display: grid; grid-template-columns: repeat(3,1fr);
   gap: 22px; max-width: 1200px; margin: 0 auto 32px;
 }
 .tool-card {
   border-radius: var(--radius); padding: 26px;
   border: 2px solid transparent;
   transition: transform .25s, box-shadow .25s;
+  display: flex; flex-direction: column;
 }
 .tool-card:hover { transform: translateY(-5px); box-shadow: 0 18px 44px rgba(0,0,0,.09); }
 .tc-green  { background: linear-gradient(145deg,#f0fdf4,#dcfce7); border-color: #bbf7d0; }
 .tc-blue   { background: linear-gradient(145deg,#eff6ff,#dbeafe); border-color: #bfdbfe; }
 .tc-purple { background: linear-gradient(145deg,#fff0f6,#fce7f3); border-color: #fbcfe8; }
 .tc-orange { background: linear-gradient(145deg,#fff7ed,#ffedd5); border-color: #fed7aa; }
+.tc-slate  { background: linear-gradient(145deg,#f8fafc,#e2e8f0); border-color: #cbd5e1; }
+.tc-teal   { background: linear-gradient(145deg,#f0fdfa,#ccfbf1); border-color: #99f6e4; }
 
 
 .tc-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; }
@@ -151,17 +154,20 @@ nav {
 .tc-icon {
   width: 42px; height: 42px; border-radius: 12px;
   display: flex; align-items: center; justify-content: center;
-  font-size: 20px;
+  font-size: 20px; flex-shrink: 0;
 }
 .ic-green  { background: linear-gradient(135deg,#22c55e,#16a34a); }
 .ic-blue   { background: linear-gradient(135deg,#60a5fa,#2563eb); }
 .ic-purple { background: linear-gradient(135deg,#f472b6,#ec4899); }
 .ic-orange { background: linear-gradient(135deg,#fb923c,#ea580c); }
+.ic-slate  { background: linear-gradient(135deg,#64748b,#1e293b); }
+.ic-teal   { background: linear-gradient(135deg,#2dd4bf,#0d9488); }
 
 
 .tc-name { font-size: 18px; font-weight: 800; }
 .tc-tagline { font-size: 12px; line-height: 1.5; margin-top: 2px; font-weight: 500; }
 .cl-green  { color: #15803d; } .cl-blue { color: #1d4ed8; } .cl-purple { color: #be185d; } .cl-orange { color: #c2410c; }
+.cl-slate  { color: #334155; } .cl-teal { color: #0f766e; }
 
 .goto-tag {
   padding: 6px 13px; border-radius: 20px; font-size: 12px; font-weight: 700;
@@ -173,6 +179,8 @@ nav {
 .gt-blue   { background: #3b82f6; color: #fff; }
 .gt-purple { background: #ec4899; color: #fff; }
 .gt-orange { background: #f97316; color: #fff; }
+.gt-slate  { background: #475569; color: #fff; }
+.gt-teal   { background: #14b8a6; color: #fff; }
 
 .tc-hr { height: 1px; background: rgba(0,0,0,.07); margin: 14px 0; }
 .tc-section-lbl {
@@ -189,6 +197,7 @@ nav {
 .tc-task-lbl {
   font-size: 12px; font-weight: 700; color: var(--text-dark);
   margin-bottom: 6px; display: flex; align-items: center; gap: 5px;
+  margin-top: auto;
 }
 .tc-task-lbl::before { content: '◎'; font-size: 11px; }
 .tc-task-text { font-size: 12px; color: var(--text-mid); line-height: 1.6; }
@@ -525,6 +534,52 @@ a.go { cursor: pointer; }
       </ul>
       <div class="tc-task-lbl">추천 업무</div>
       <p class="tc-task-text">공문서 작성, 정책 분석, 민원 처리, 내부 보고서 작성 등 보안이 필요한 업무</p>
+    </div>
+
+    <!-- Grok -->
+    <div class="tool-card tc-slate">
+      <div class="tc-head">
+        <div class="tc-logo">
+          <div class="tc-icon ic-slate">⚡</div>
+          <div>
+            <div class="tc-name">Grok</div>
+            <div class="tc-tagline cl-slate">실시간 이슈 파악과 빠른 응답</div>
+          </div>
+        </div>
+        <a href="https://grok.com" target="_blank" rel="noopener noreferrer"><button class="goto-tag gt-slate">바로가기 ↗</button></a>
+      </div>
+      <div class="tc-hr"></div>
+      <div class="tc-section-lbl">주요 장점</div>
+      <ul class="tc-list">
+        <li>X(구 트위터) 연동 기반의 실시간 여론·이슈 파악</li>
+        <li>빠른 응답 속도와 간결한 요약 능력</li>
+        <li>이미지 생성 및 분석 등 멀티모달 기능 지원</li>
+      </ul>
+      <div class="tc-task-lbl">추천 업무</div>
+      <p class="tc-task-text">실시간 여론 동향 파악, 이슈 모니터링, 아이디어 발굴</p>
+    </div>
+
+    <!-- Perplexity -->
+    <div class="tool-card tc-teal">
+      <div class="tc-head">
+        <div class="tc-logo">
+          <div class="tc-icon ic-teal">🔎</div>
+          <div>
+            <div class="tc-name">Perplexity</div>
+            <div class="tc-tagline cl-teal">출처가 명확한 AI 검색 엔진</div>
+          </div>
+        </div>
+        <a href="https://www.perplexity.ai" target="_blank" rel="noopener noreferrer"><button class="goto-tag gt-teal">바로가기 ↗</button></a>
+      </div>
+      <div class="tc-hr"></div>
+      <div class="tc-section-lbl">주요 장점</div>
+      <ul class="tc-list">
+        <li>답변마다 근거 출처를 함께 제시하여 검증이 쉬움</li>
+        <li>최신 웹 자료를 실시간으로 검색·종합</li>
+        <li>후속 질문으로 자료를 깊이 있게 확장 가능</li>
+      </ul>
+      <div class="tc-task-lbl">추천 업무</div>
+      <p class="tc-task-text">정책·법령 자료 조사, 타 지자체 사례 검색, 출처 확인이 필요한 보고서 작성</p>
     </div>
 
   </div>
